@@ -12,8 +12,11 @@ set(CMAKE_AR ${triple}-ar)
 set(CMAKE_RANLIB ${triple}-ranlib)
 set(CMAKE_RC_COMPILER ${triple}-windres)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-command-line-argument -gcodeview")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -gcodeview")
+# 字符集相关配置
+set(CHAR_SET_FLAGS "-DUNICODE -D_UNICODE")
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-command-line-argument -gcodeview ${CHAR_SET_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -gcodeview ${CHAR_SET_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--pdb=")
 
 # For make package use.
