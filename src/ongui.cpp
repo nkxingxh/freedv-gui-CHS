@@ -1171,14 +1171,14 @@ void MainFrame::OnTogBtnAnalogClick (wxCommandEvent& event)
         m_panelSpectrum->setFreqScale(MODEM_STATS_NSPEC*((float)MAX_F_HZ/(FS/2)));
         m_panelWaterfall->setFs(FS);
         
-        m_togBtnAnalog->SetLabel(wxT("Switch to Di&gital"));
+        m_togBtnAnalog->SetLabel(wxT("切换到数字模式(&G)"));
     }
     else {
         g_analog = 0;
         m_panelSpectrum->setFreqScale(MODEM_STATS_NSPEC*((float)MAX_F_HZ/(freedvInterface.getRxModemSampleRate()/2)));
         m_panelWaterfall->setFs(freedvInterface.getRxModemSampleRate());
         
-        m_togBtnAnalog->SetLabel(wxT("Switch to A&nalog"));
+        m_togBtnAnalog->SetLabel(wxT("切换到模拟模式(&N)"));
     }
 
     // Report analog change to registered reporters

@@ -349,73 +349,73 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
 #if !defined(__WXGTK__)
     /* "On Top" isn't reliable on Linux, so there's no point in having it visible. */
     wxMenuItem* m_menuItemOnTop;
-    m_menuItemOnTop = new wxMenuItem(file, wxID_ANY, wxString(_("Keep &On Top")) , _("Always keeps FreeDV above other windows"), wxITEM_CHECK);
+    m_menuItemOnTop = new wxMenuItem(file, wxID_ANY, wxString(_("置顶(&O)")) , _("Always keeps FreeDV above other windows"), wxITEM_CHECK);
     file->Append(m_menuItemOnTop);
     this->Connect(m_menuItemOnTop->GetId(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(TopFrame::OnTop));
 #endif // !defined(__WXGTK__)
 
     wxMenuItem* m_menuItemExit;
-    m_menuItemExit = new wxMenuItem(file, ID_EXIT, wxString(_("E&xit")) , _("Exit Program"), wxITEM_NORMAL);
+    m_menuItemExit = new wxMenuItem(file, ID_EXIT, wxString(_("退出(&X)")) , _("Exit Program"), wxITEM_NORMAL);
     file->Append(m_menuItemExit);
 
-    m_menubarMain->Append(file, _("&File"));
+    m_menubarMain->Append(file, _("文件(&F)"));
 
     tools = new wxMenu();
     wxMenuItem* m_menuItemEasySetup;
-    m_menuItemEasySetup = new wxMenuItem(tools, wxID_ANY, wxString(_("&Easy Setup...")) , _("Simplified setup of FreeDV"), wxITEM_NORMAL);
+    m_menuItemEasySetup = new wxMenuItem(tools, wxID_ANY, wxString(_("快速配置(&E)")) , _("Simplified setup of FreeDV"), wxITEM_NORMAL);
     tools->Append(m_menuItemEasySetup);
     
     wxMenuItem* m_menuItemFreeDVReporter;
-    m_menuItemFreeDVReporter = new wxMenuItem(tools, wxID_ANY, wxString(_("FreeDV R&eporter")) , _("Opens browser window and displays FreeDV Reporter service."), wxITEM_NORMAL);
+    m_menuItemFreeDVReporter = new wxMenuItem(tools, wxID_ANY, wxString(_("FreeDV 在线用户报告器(&E)")) , _("Opens browser window and displays FreeDV Reporter service."), wxITEM_NORMAL);
     tools->Append(m_menuItemFreeDVReporter);
     
     wxMenuItem* toolsSeparator1 = new wxMenuItem(tools, wxID_SEPARATOR);
     tools->Append(toolsSeparator1);
     
     wxMenuItem* m_menuItemAudio;
-    m_menuItemAudio = new wxMenuItem(tools, wxID_ANY, wxString(_("&Audio Config...")) , _("Configures sound cards for FreeDV"), wxITEM_NORMAL);
+    m_menuItemAudio = new wxMenuItem(tools, wxID_ANY, wxString(_("音频配置(&A)...")) , _("Configures sound cards for FreeDV"), wxITEM_NORMAL);
     tools->Append(m_menuItemAudio);
 
     wxMenuItem* m_menuItemRigCtrlCfg;
-    m_menuItemRigCtrlCfg = new wxMenuItem(tools, wxID_ANY, wxString(_("CAT and P&TT Config...")) , _("Configures FreeDV integration with radio"), wxITEM_NORMAL);
+    m_menuItemRigCtrlCfg = new wxMenuItem(tools, wxID_ANY, wxString(_("CAT和PTT配置(&T)...")) , _("Configures FreeDV integration with radio"), wxITEM_NORMAL);
     tools->Append(m_menuItemRigCtrlCfg);
 
     wxMenuItem* m_menuItemOptions;
-    m_menuItemOptions = new wxMenuItem(tools, wxID_ANY, wxString(_("&Options...")) , _("Miscellaneous FreeDV configuration options"), wxITEM_NORMAL);
+    m_menuItemOptions = new wxMenuItem(tools, wxID_ANY, wxString(_("首选项(&O)...")) , _("Miscellaneous FreeDV configuration options"), wxITEM_NORMAL);
     tools->Append(m_menuItemOptions);
 
     wxMenuItem* m_menuItemFilter;
-    m_menuItemFilter = new wxMenuItem(tools, wxID_ANY, wxString(_("&Filter...")) , _("Configures audio filtering"), wxITEM_NORMAL);
+    m_menuItemFilter = new wxMenuItem(tools, wxID_ANY, wxString(_("过滤器(&F)...")) , _("Configures audio filtering"), wxITEM_NORMAL);
     tools->Append(m_menuItemFilter);
     
     wxMenuItem* toolsSeparator2 = new wxMenuItem(tools, wxID_SEPARATOR);
     tools->Append(toolsSeparator2);
 
-    m_menuItemRecFileFromRadio = new wxMenuItem(tools, wxID_ANY, wxString(_("Start &Record File - From Radio...")) , _("Records incoming audio from the attached radio"), wxITEM_NORMAL);
+    m_menuItemRecFileFromRadio = new wxMenuItem(tools, wxID_ANY, wxString(_("录制电台输入(&R)...")) , _("Records incoming audio from the attached radio"), wxITEM_NORMAL);
     g_recFileFromRadioEventId = m_menuItemRecFileFromRadio->GetId();
     tools->Append(m_menuItemRecFileFromRadio);
 
-    m_menuItemPlayFileFromRadio = new wxMenuItem(tools, wxID_ANY, wxString(_("Start &Play File - From Radio...")) , _("Pipes radio sound input from file"), wxITEM_NORMAL);
+    m_menuItemPlayFileFromRadio = new wxMenuItem(tools, wxID_ANY, wxString(_("回放电台输入(&P)...")) , _("Pipes radio sound input from file"), wxITEM_NORMAL);
     g_playFileFromRadioEventId = m_menuItemPlayFileFromRadio->GetId();
     tools->Append(m_menuItemPlayFileFromRadio);
     
-    m_menubarMain->Append(tools, _("&Tools"));
+    m_menubarMain->Append(tools, _("工具(&T)"));
 
     help = new wxMenu();
     wxMenuItem* m_menuItemHelpUpdates;
-    m_menuItemHelpUpdates = new wxMenuItem(help, wxID_ANY, wxString(_("&Check for Updates")) , _("Checks for updates to FreeDV"), wxITEM_NORMAL);
+    m_menuItemHelpUpdates = new wxMenuItem(help, wxID_ANY, wxString(_("检查更新(&C)")) , _("Checks for updates to FreeDV"), wxITEM_NORMAL);
     help->Append(m_menuItemHelpUpdates);
     m_menuItemHelpUpdates->Enable(false);
     
     wxMenuItem* m_menuItemAbout;
-    m_menuItemAbout = new wxMenuItem(help, ID_ABOUT, wxString(_("&About...")) , _("About this program"), wxITEM_NORMAL);
+    m_menuItemAbout = new wxMenuItem(help, ID_ABOUT, wxString(_("关于(&A)...")) , _("About this program"), wxITEM_NORMAL);
     help->Append(m_menuItemAbout);
 
     wxMenuItem* m_menuItemHelpManual;
-    m_menuItemHelpManual = new wxMenuItem(help, wxID_ANY, wxString(_("&User Manual...")), _("Loads the user manual"), wxITEM_NORMAL);
+    m_menuItemHelpManual = new wxMenuItem(help, wxID_ANY, wxString(_("用户手册(&U)...")), _("Loads the user manual"), wxITEM_NORMAL);
     help->Append(m_menuItemHelpManual);
         
-    m_menubarMain->Append(help, _("&Help"));
+    m_menubarMain->Append(help, _("帮助(&H)"));
 
     this->SetMenuBar(m_menubarMain);
 
@@ -431,7 +431,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     wxSizer* leftSizer = new wxWrapSizer(wxVERTICAL, wxREMOVE_LEADING_SPACES);
 
     wxStaticBoxSizer* snrSizer;
-    wxStaticBox* snrBox = new wxStaticBox(m_panel, wxID_ANY, _("SNR"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* snrBox = new wxStaticBox(m_panel, wxID_ANY, _("信噪比"), wxDefaultPosition, wxSize(100,-1));
     snrSizer = new wxStaticBoxSizer(snrBox, wxVERTICAL);
 
     //------------------------------
@@ -451,7 +451,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // S/N ratio slow Checkbox
     //------------------------------
-    m_ckboxSNR = new wxCheckBox(snrBox, wxID_ANY, _("Slow"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE);
+    m_ckboxSNR = new wxCheckBox(snrBox, wxID_ANY, _("平滑"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE);
     m_ckboxSNR->SetToolTip(_("Smooth but slow SNR estimation"));
     snrSizer->Add(m_ckboxSNR, 0, wxALIGN_CENTER_HORIZONTAL, 5);
 
@@ -461,7 +461,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     // Signal Level(vert. bargraph)
     //------------------------------
     wxStaticBoxSizer* levelSizer;
-    wxStaticBox* levelBox = new wxStaticBox(m_panel, wxID_ANY, _("Level"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* levelBox = new wxStaticBox(m_panel, wxID_ANY, _("电平"), wxDefaultPosition, wxSize(100,-1));
     levelSizer = new wxStaticBoxSizer(levelBox, wxVERTICAL);
     
     m_textLevel = new wxStaticText(levelBox, wxID_ANY, wxT(""), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
@@ -478,21 +478,21 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     // Sync  Indicator box
     //------------------------------
     wxStaticBoxSizer* sbSizer3_33;
-    wxStaticBox* syncBox = new wxStaticBox(m_panel, wxID_ANY, _("Sync"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* syncBox = new wxStaticBox(m_panel, wxID_ANY, _("同步"), wxDefaultPosition, wxSize(100,-1));
     sbSizer3_33 = new wxStaticBoxSizer(syncBox, wxVERTICAL);
 
-    m_textSync = new wxStaticText(syncBox, wxID_ANY, wxT("Modem"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
+    m_textSync = new wxStaticText(syncBox, wxID_ANY, wxT("调制解调器"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
     sbSizer3_33->Add(m_textSync, 0, wxALIGN_CENTER_HORIZONTAL, 1);
     m_textSync->Disable();
 
-    m_textCurrentDecodeMode = new wxStaticText(syncBox, wxID_ANY, wxT("Mode: unk"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
+    m_textCurrentDecodeMode = new wxStaticText(syncBox, wxID_ANY, wxT("模式: --"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
     sbSizer3_33->Add(m_textCurrentDecodeMode, 0, wxALIGN_CENTER_HORIZONTAL, 1);
     m_textCurrentDecodeMode->Disable();
     
-    m_BtnReSync = new wxButton(syncBox, wxID_ANY, _("ReS&ync"), wxDefaultPosition, wxDefaultSize, 0);
+    m_BtnReSync = new wxButton(syncBox, wxID_ANY, _("重新同步(&Y)"), wxDefaultPosition, wxDefaultSize, 0);
     sbSizer3_33->Add(m_BtnReSync, 0, wxALL | wxALIGN_CENTRE, 5);
     
-    m_btnCenterRx = new wxButton(syncBox, wxID_ANY, _("C&enter RX"), wxDefaultPosition, wxDefaultSize, 0);
+    m_btnCenterRx = new wxButton(syncBox, wxID_ANY, _("接收频率居中(&E)"), wxDefaultPosition, wxDefaultSize, 0);
     sbSizer3_33->Add(m_btnCenterRx, 0, wxALL | wxALIGN_CENTRE, 5);
     
     leftSizer->Add(sbSizer3_33,0, wxALL|wxEXPAND|wxFIXED_MINSIZE, 2);
@@ -500,10 +500,10 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // Audio Recording/Playback
     //------------------------------
-    wxStaticBox* audioBox = new wxStaticBox(m_panel, wxID_ANY, _("Audio"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* audioBox = new wxStaticBox(m_panel, wxID_ANY, _("音频"), wxDefaultPosition, wxSize(100,-1));
     wxStaticBoxSizer* sbSizerAudioRecordPlay = new wxStaticBoxSizer(audioBox, wxVERTICAL);
     
-    m_audioRecord = new wxToggleButton(audioBox, wxID_ANY, _("Record"), wxDefaultPosition, wxDefaultSize, 0);
+    m_audioRecord = new wxToggleButton(audioBox, wxID_ANY, _("录制"), wxDefaultPosition, wxDefaultSize, 0);
     m_audioRecord->SetToolTip(_("Records incoming over the air signals as well as anything transmitted."));
     sbSizerAudioRecordPlay->Add(m_audioRecord, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
     
@@ -514,7 +514,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
 
     wxStaticBoxSizer* sbSizer_ber;
-    statsBox = new wxStaticBox(m_panel, wxID_ANY, _("Stats"), wxDefaultPosition, wxSize(100,-1));
+    statsBox = new wxStaticBox(m_panel, wxID_ANY, _("状态"), wxDefaultPosition, wxSize(100,-1));
     sbSizer_ber = new wxStaticBoxSizer(statsBox, wxVERTICAL);
 
     m_BtnBerReset = new wxButton(statsBox, wxID_ANY, _("&Reset"), wxDefaultPosition, wxDefaultSize, 0);
@@ -543,10 +543,10 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // Help button: goes to Help page on website
     //------------------------------
-    wxStaticBox* helpBox = new wxStaticBox(m_panel, wxID_ANY, _("Assistance"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* helpBox = new wxStaticBox(m_panel, wxID_ANY, _("帮助"), wxDefaultPosition, wxSize(100,-1));
     wxStaticBoxSizer* helpSizer = new wxStaticBoxSizer(helpBox, wxVERTICAL);
     
-    m_btnHelp = new wxButton(helpBox, wxID_ANY, _("Get Help"), wxDefaultPosition, wxDefaultSize, 0);
+    m_btnHelp = new wxButton(helpBox, wxID_ANY, _("获取帮助"), wxDefaultPosition, wxDefaultSize, 0);
     m_btnHelp->SetToolTip(_("Get help with FreeDV."));
     helpSizer->Add(m_btnHelp, 0, wxALIGN_CENTER|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
     leftSizer->SetMinSize(wxSize(-1, 375));
@@ -591,13 +591,13 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     modeStatusSizer->Add(m_txtModeStatus, 0, wxALL|wxEXPAND, 1);
     lowerSizer->Add(modeStatusSizer, 0, wxALIGN_CENTER_VERTICAL|wxALL, 1);
 
-    m_BtnCallSignReset = new wxButton(m_panel, wxID_ANY, _("&Clear"), wxDefaultPosition, wxDefaultSize, 0);
+    m_BtnCallSignReset = new wxButton(m_panel, wxID_ANY, _("清空(&C)"), wxDefaultPosition, wxDefaultSize, 0);
     lowerSizer->Add(m_BtnCallSignReset, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 1);
 
     wxBoxSizer* bSizer15;
     bSizer15 = new wxBoxSizer(wxVERTICAL);
     m_txtCtrlCallSign = new wxTextCtrl(m_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
-    m_txtCtrlCallSign->SetToolTip(_("Call Sign of transmitting station will appear here"));
+    m_txtCtrlCallSign->SetToolTip(_("此处将显示发射电台的呼号"));
     m_txtCtrlCallSign->SetSizeHints(wxSize(100,-1));
 
     m_cboLastReportedCallsigns = new wxComboCtrl(m_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxCB_READONLY);
@@ -629,7 +629,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     // Squelch Slider Control
     //=====================================================
     wxStaticBoxSizer* sbSizer3;
-    wxStaticBox* squelchBox = new wxStaticBox(m_panel, wxID_ANY, _("S&quelch"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* squelchBox = new wxStaticBox(m_panel, wxID_ANY, _("静噪(&Q)"), wxDefaultPosition, wxSize(100,-1));
     sbSizer3 = new wxStaticBoxSizer(squelchBox, wxVERTICAL);
 
     m_sliderSQ = new wxSlider(squelchBox, wxID_ANY, 0, 0, 40, wxDefaultPosition, wxDefaultSize, wxSL_AUTOTICKS);
@@ -655,13 +655,13 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // Squelch Toggle Checkbox
     //------------------------------
-    m_ckboxSQ = new wxCheckBox(squelchBox, wxID_ANY, _("Enable"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE);
+    m_ckboxSQ = new wxCheckBox(squelchBox, wxID_ANY, _("启用"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE);
 
     sbSizer3->Add(m_ckboxSQ, 0, wxALIGN_CENTER_HORIZONTAL, 0);
     rightSizer->Add(sbSizer3, 0, wxALL | wxEXPAND, 2);
 
     // Transmit Level slider
-    wxStaticBox* txLevelBox = new wxStaticBox(m_panel, wxID_ANY, _("TX &Attenuation"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* txLevelBox = new wxStaticBox(m_panel, wxID_ANY, _("发射衰减(&A)"), wxDefaultPosition, wxSize(100,-1));
     wxBoxSizer* txLevelSizer = new wxStaticBoxSizer(txLevelBox, wxVERTICAL);
     
     // Sliders are integer values, so we're multiplying min/max by 10 here to allow 1 decimal precision.
@@ -686,7 +686,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     rightSizer->Add(txLevelSizer, 0, wxALL | wxEXPAND, 2);
     
     // Mic/Speaker Level slider
-    wxStaticBox* micSpeakerBox = new wxStaticBox(m_panel, wxID_ANY, _("Mic/Spkr &Level"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* micSpeakerBox = new wxStaticBox(m_panel, wxID_ANY, _("麦克风/扬声器增益(&L)"), wxDefaultPosition, wxSize(100,-1));
     wxBoxSizer* micSpeakerLevelSizer = new wxStaticBoxSizer(micSpeakerBox, wxVERTICAL);
     
     // Sliders are integer values, so we're multiplying min/max by 10 here to allow 1 decimal precision.
@@ -716,7 +716,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // Mode box
     //------------------------------
-    modeBox = new wxStaticBox(m_panel, wxID_ANY, _("&Mode"), wxDefaultPosition, wxSize(100,-1));
+    modeBox = new wxStaticBox(m_panel, wxID_ANY, _("模式(&M)"), wxDefaultPosition, wxSize(100,-1));
     sbSizer_mode = new wxStaticBoxSizer(modeBox, wxVERTICAL);
 
     m_rbRADE = new wxRadioButton( modeBox, wxID_ANY, wxT("RADEV1"), wxDefaultPosition, wxDefaultSize,  wxRB_GROUP);
@@ -734,27 +734,27 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     // Control Toggles box
     //=====================================================
     wxStaticBoxSizer* sbSizer5;
-    wxStaticBox* controlBox = new wxStaticBox(m_panel, wxID_ANY, _("Control"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* controlBox = new wxStaticBox(m_panel, wxID_ANY, _("控制"), wxDefaultPosition, wxSize(100,-1));
     sbSizer5 = new wxStaticBoxSizer(controlBox, wxVERTICAL);
 
     //-------------------------------
     // Stop/Stop signal processing (rx and tx)
     //-------------------------------
-    m_togBtnOnOff = new wxToggleButton(controlBox, wxID_ANY, _("&Start Modem"), wxDefaultPosition, wxDefaultSize, 0);
+    m_togBtnOnOff = new wxToggleButton(controlBox, wxID_ANY, _("启动调制解调器(&S)"), wxDefaultPosition, wxDefaultSize, 0);
     m_togBtnOnOff->SetToolTip(_("Begin/End receiving data."));
     sbSizer5->Add(m_togBtnOnOff, 0, wxALL | wxEXPAND, 5);
 
     //------------------------------
     // Analog Passthrough Toggle
     //------------------------------
-    m_togBtnAnalog = new wxToggleButton(controlBox, wxID_ANY, _("Switch to A&nalog"), wxDefaultPosition, wxDefaultSize, 0);
+    m_togBtnAnalog = new wxToggleButton(controlBox, wxID_ANY, _("切换到模拟(&N)"), wxDefaultPosition, wxDefaultSize, 0);
     m_togBtnAnalog->SetToolTip(_("Toggle analog/digital operation."));
     sbSizer5->Add(m_togBtnAnalog, 0, wxALL | wxEXPAND, 5);
 
     //------------------------------
     // Voice Keyer Toggle
     //------------------------------
-    m_togBtnVoiceKeyer = new wxToggleButton(controlBox, wxID_ANY, _("Start Voice &Keyer"), wxDefaultPosition, wxDefaultSize, 0);
+    m_togBtnVoiceKeyer = new wxToggleButton(controlBox, wxID_ANY, _("开始语音键控(&K)"), wxDefaultPosition, wxDefaultSize, 0);
     m_togBtnVoiceKeyer->SetToolTip(_("Toggle Voice Keyer. Right-click for additional options."));
     sbSizer5->Add(m_togBtnVoiceKeyer, 0, wxALL | wxEXPAND, 5);
 
@@ -768,7 +768,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     rightSizer->Add(sbSizer5, 0, wxALL|wxEXPAND, 2);
 
     // Frequency text field (PSK Reporter)
-    m_freqBox = new wxStaticBox(m_panel, wxID_ANY, _("Radio Freq. (MHz)"), wxDefaultPosition, wxSize(100,-1));
+    m_freqBox = new wxStaticBox(m_panel, wxID_ANY, _("电台频率 (MHz)"), wxDefaultPosition, wxSize(100,-1));
 
     wxBoxSizer* reportFrequencySizer = new wxStaticBoxSizer(m_freqBox, wxHORIZONTAL);
     
@@ -997,7 +997,7 @@ TopFrame::~TopFrame()
 
 void TopFrame::setVoiceKeyerButtonLabel_(wxString filename)
 {
-    wxString vkLabel = _("Start Voice &Keyer");
+    wxString vkLabel = _("开始语音键控(&K)");
     int vkLabelWidth = 0;
     int filenameWidth = 0;
     int tmp = 0;

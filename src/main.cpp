@@ -2470,7 +2470,7 @@ void MainFrame::performFreeDVOn_()
                                 std::make_shared<PskReporter>(
                                     wxGetApp().appConfiguration.reportingConfiguration.reportingCallsign->ToStdString(), 
                                     wxGetApp().appConfiguration.reportingConfiguration.reportingGridSquare->ToStdString(),
-                                    std::string("FreeDV ") + GetFreeDVVersion());
+                                    std::string("FreeDV 简体中文 ") + GetFreeDVVersion());
                             assert(pskReporter != nullptr);
                             wxGetApp().m_reporters.push_back(pskReporter);
                         }
@@ -2681,7 +2681,7 @@ void MainFrame::OnTogBtnOnOff(wxCommandEvent&)
 
                 if (m_RxRunning)
                 {
-                    m_togBtnOnOff->SetLabel(wxT("&Stop Modem"));
+                    m_togBtnOnOff->SetLabel(wxT("停止调制解调器(&S)"));
                 }
                 m_togBtnOnOff->SetValue(m_RxRunning);
                 m_togBtnOnOff->Enable(true);
